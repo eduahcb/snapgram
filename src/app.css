@@ -1,0 +1,94 @@
+:root {
+  --font-family-base: 'Inter Variable', sans-serif;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+
+  --font-line-height-base: 1.4;
+}
+
+:root {
+  --heading-sm: var(--font-weight-bold) 1.5rem/var(--font-line-height-base) var(--font-family-base);
+  --heading-sm-semi-bold: var(--font-weight-semi-bold) 1.5rem/var(--font-line-height-base) var(--font-family-base);
+
+  --heading-md: var(--font-weight-bold) 1.875rem/var(--font-line-height-base) var(--font-family-base);
+  --heading-md-semi-bold: var(--font-weight-semi-bold) 1.875rem/var(--font-line-height-base) var(--font-family-base);
+
+  --heading-lg: var(--font-weight-bold) 2.25rem/var(--font-line-height-base) var(--font-family-base);
+  --heading-lg-semi-bold: var(--font-weight-semi-bold) 2.25rem/var(--font-line-height-base) var(--font-family-base);
+
+  --text-xxs: var(--font-weight-medium) 0.625rem/var(--font-line-height-base) var(--font-family-base);
+
+  --text-xs-regular: var(--font-weight-regular) 0.75rem/var(--font-line-height-base) var(--font-family-base);
+  --text-xs-medium: var(--font-weight-medium) 0.75rem/var(--font-line-height-base) var(--font-family-base);
+  --text-xs-semi-bold: var(--font-weight-semi-bold) 0.75rem/var(--font-line-height-base) var(--font-family-base);
+  --text-xs-bold: var(--font-weight-bold) 0.75rem/var(--font-line-height-base) var(--font-family-base);
+
+  --text-sm-regular: var(--font-weight-regular) 0.875rem/var(--font-line-height-base) var(--font-family-base);
+  --text-sm-medium: var(--font-weight-medium) 0.875rem/var(--font-line-height-base) var(--font-family-base);
+  --text-sm-semi-bold: var(--font-weight-semi-bold) 0.875rem/var(--font-line-height-base) var(--font-family-base);
+  --text-sm-bold: var(--font-weight-bold) 0.875rem/var(--font-line-height-base) var(--font-family-base);
+
+  --text-md-regular: var(--font-weight-regular) 1rem/var(--font-line-height-base) var(--font-family-base);
+  --text-md-medium: var(--font-weight-medium) 1rem/var(--font-line-height-base) var(--font-family-base);
+  --text-md-semi-bold: var(--font-weight-semi-bold) 1rem/var(--font-line-height-base) var(--font-family-base);
+  --text-md-bold: var(--font-weight-bold) 1rem/var(--font-line-height-base) var(--font-family-base);
+
+  --text-lg-regular: var(--font-weight-regular) 1.125rem/var(--font-line-height-base) var(--font-family-base);
+  --text-lg-medium: var(--font-weight-medium) 1.125rem/var(--font-line-height-base) var(--font-family-base);
+  --text-lg-semi-bold: var(--font-weight-semi-bold) 1.125rem/var(--font-line-height-base) var(--font-family-base);
+  --text-lg-bold: var(--font-weight-bold) 1.125rem/var(--font-line-height-base) var(--font-family-base);
+}
+
+:root {
+  --color-primary: #877EFF;
+  --color-secondary: #FFB620;
+
+  --color-dark-1: #000000;
+  --color-dark-2: #09090A;
+  --color-dark-3: #101012;
+  --color-dark-4: #1F1F22;
+
+  --color-light-1: #FFFFFF;
+  --color-light-2: #EFEFEF;
+  --color-light-3: #7878A3;
+  --color-light-4: #5C5C7B;
+}
+
+:root {
+  --color-background-base: var(--color-dark-1);
+  --color-background-surface: var(--color-dark-3);
+  --color-background-surface-high: var(--color-dark-4);
+
+  --color-text-high-emphasis: var(--color-light-1);
+  --color-text: var(--color-light-2);
+  --color-text-low-emphasis: var(--color-light-3);
+  --color-text-subtle: var(--color-light-4);
+
+  --color-primary-on-color: var(--color-light-1);
+}
+
+
+html {
+  font-size: 1rem;
+  font-family: var(--font-family-base);
+  line-height: var(--font-line-height-base);
+  box-sizing: border-box;
+  height: 100dvh;
+  background-color: var(--color-background-base);
+  color: var(--color-text);
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+body {
+  height: inherit;
+}

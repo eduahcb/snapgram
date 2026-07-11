@@ -17,6 +17,9 @@
     "lint": "eslint",
     "lint:fix": "eslint --fix"
   },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.2.8"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^9.1.0",
     "@sveltejs/adapter-node": "^5.5.4",

@@ -8,6 +8,9 @@ export default antfu({
     quotes: "double",
     semi: true,
   },
+  ignores: [
+    ".github/*",
+  ],
   rules: {
     "unicorn/filename-case": ["error", { case: "kebabCase" }],
   },

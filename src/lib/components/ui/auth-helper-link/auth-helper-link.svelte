@@ -1,17 +1,19 @@
 <script lang="ts">
   import type { Pathname } from "$app/types";
+  import type { Snippet } from "svelte";
   import { resolve } from "$app/paths";
 
-  type AuthHelperLink = {
+  type AuthHelperLinkProps = {
     href?: Pathname;
     label: string;
+    children: Snippet;
   };
 
-  const { href, label }: AuthHelperLink = $props();
+  const { href, label, children }: AuthHelperLinkProps = $props();
 </script>
 
 <p class="text">
-  Don’t have an account?
+  {@render children()}
 
   {#if href}
     <a class="link" href={resolve(href)}>{label}</a>

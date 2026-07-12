@@ -10,6 +10,7 @@ export default antfu({
   },
   ignores: [
     ".github/*",
+    ".mcp.json",
   ],
   rules: {
     "unicorn/filename-case": ["error", { case: "kebabCase" }],

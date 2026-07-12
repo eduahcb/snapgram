@@ -92,3 +92,15 @@ html {
 body {
   height: inherit;
 }
+
+button {
+  font-family: var(--font-family-base);
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}

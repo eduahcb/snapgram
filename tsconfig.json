@@ -4,6 +4,9 @@
     "rewriteRelativeImportExtensions": true,
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
+    "types": [
+      "vitest-browser-svelte"
+    ],
     "allowJs": true,
     "checkJs": true,
     "strict": true,

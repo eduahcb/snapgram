@@ -4,7 +4,7 @@
   import { resolve } from "$app/paths";
 
   type AuthHelperLinkProps = {
-    href?: Pathname;
+    href: Pathname;
     label: string;
     children: Snippet;
   };
@@ -15,7 +15,7 @@
 <p class="text">
   {@render children()}
 
-  {#if href}
+  {#if href && label}
     <a class="link" href={resolve(href)}>{label}</a>
   {/if}
 </p>

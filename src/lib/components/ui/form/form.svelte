@@ -1,18 +1,43 @@
 <script lang="ts">
+  import type { SubmitFunction } from "@sveltejs/kit";
   import type { Snippet } from "svelte";
+  import { enhance } from "$app/forms";
+  import { tick } from "svelte";
 
   type FormProp = {
     header?: Snippet;
     actions?: Snippet;
     footer?: Snippet;
     children?: Snippet;
+    method?: "GET" | "POST" | "dialog";
+    submit?: SubmitFunction;
   };
 
-  const { header, actions, footer, children }: FormProp = $props();
+  // eslint-disable-next-line style/operator-linebreak
+  const { header, actions, footer, children, method, submit }: FormProp =
+    $props();
+
+  const handleSubmit: SubmitFunction = async (input) => {
+    const beforeSubmitResult = await submit?.(input);
+
+    return async (opts) => {
+      if (beforeSubmitResult) {
+        await beforeSubmitResult(opts);
+      }
+      else {
+        await opts.update();
+      }
+
+      await tick();
+      input.formElement
+        .querySelector<HTMLElement>("[aria-invalid='true']")
+        ?.focus();
+    };
+  };
 </script>
 
 <div class="form-container">
-  <form class="form">
+  <form class="form" {method} use:enhance={handleSubmit}>
     {#if header}
       <div class="header">
         {@render header()}

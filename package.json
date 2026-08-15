@@ -28,7 +28,8 @@
     "@fontsource-variable/inter": "^5.2.8",
     "better-auth": "^1.6.28",
     "drizzle-orm": "1.0.0-rc.4",
-    "pg": "^8.23.0"
+    "pg": "^8.23.0",
+    "valibot": "^1.4.2"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^9.1.0",

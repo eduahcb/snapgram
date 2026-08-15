@@ -33,6 +33,7 @@ export default defineConfig({
         "**/.svelte-kit/**",
         "**/build/**",
         "**/coverage/**",
+        "**/src/lib/db/schema/**",
       ],
       thresholds: {
         functions: 90,

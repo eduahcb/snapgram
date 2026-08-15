@@ -14,6 +14,11 @@ export default defineConfig({
         runes: ({ filename }) => filename.split(/[/\\]/).includes("node_modules") ? undefined : true,
       },
       adapter: adapter(),
+      typescript: {
+        config: (config) => {
+          config.include.push("../drizzle.config.ts");
+        },
+      },
     }),
   ],
   test: {
@@ -28,6 +33,7 @@ export default defineConfig({
         "**/.svelte-kit/**",
         "**/build/**",
         "**/coverage/**",
+        "**/src/lib/db/schema/**",
       ],
       thresholds: {
         functions: 90,

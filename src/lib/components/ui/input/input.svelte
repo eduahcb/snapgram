@@ -1,10 +1,13 @@
 <script lang="ts">
+  import type { FullAutoFill } from "svelte/elements";
+
   type InputProps = {
     type?: string;
     name?: string;
     placeholder?: string;
     id?: string;
     disabled?: boolean;
+    autocomplete?: FullAutoFill | null | undefined;
   };
 
   const { type = "text", disabled = false, ...props }: InputProps = $props();

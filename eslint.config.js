@@ -11,6 +11,7 @@ export default antfu({
   ignores: [
     ".github/*",
     ".mcp.json",
+    "src/lib/server/db/migrations/**",
   ],
   rules: {
     "unicorn/filename-case": ["error", { case: "kebabCase" }],

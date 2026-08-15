@@ -12,6 +12,7 @@
 <svelte:head>
   <link rel="icon" href={favicon} />
   <title>Snapgram</title>
+  <meta name="description" content="Your favorite social media is here." />
 </svelte:head>
 
 {@render children()}

@@ -23,8 +23,7 @@
     return async (opts) => {
       if (beforeSubmitResult) {
         await beforeSubmitResult(opts);
-      }
-      else {
+      } else {
         await opts.update();
       }
 
@@ -34,10 +33,17 @@
         ?.focus();
     };
   };
+
+  function enhanceForm(node: HTMLFormElement) {
+    // eslint-disable-next-line antfu/if-newline
+    if (method !== "POST") return;
+
+    return enhance(node, handleSubmit);
+  }
 </script>
 
 <div class="form-container">
-  <form class="form" {method} use:enhance={handleSubmit}>
+  <form class="form" {method} use:enhanceForm>
     {#if header}
       <div class="header">
         {@render header()}

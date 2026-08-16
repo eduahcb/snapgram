@@ -20,6 +20,9 @@ importers:
       pg:
         specifier: ^8.23.0
         version: 8.23.0
+      svelte-sonner:
+        specifier: ^1.2.1
+        version: 1.2.1(svelte@5.56.4(@typescript-eslint/types@8.63.0))
       transliteration:
         specifier: ^2.6.1
         version: 2.6.1
@@ -3307,6 +3310,11 @@ packages:
   rou3@0.9.2:
     resolution: {integrity: sha512-3SOzvaAg8rkHrXtRjpCvCvbyO5to9oOO27Z/XqHEYXfMRVSw/qMIVdmaOk9W2lcRLtR6dlqTjo9hDeJk70QBYQ==}
 
+  runed@0.28.0:
+    resolution: {integrity: sha512-k2xx7RuO9hWcdd9f+8JoBeqWtYrm5CALfgpkg2YDB80ds/QE4w0qqu34A7fqiAwiBBSBQOid7TLxwxVC27ymWQ==}
+    peerDependencies:
+      svelte: ^5.7.0
+
   sade@1.8.1:
     resolution: {integrity: sha512-xal3CZX1Xlo/k4ApwCFrHVACi9fBqJ7V+mwhBsuf/1IOKbBy098Fex+Wa/5QMubw09pSZ/u8EY8PWgevJsXp1A==}
     engines: {node: '>=6'}
@@ -3472,6 +3480,11 @@ packages:
     resolution: {integrity: sha512-T6mqZrySltPCDwfKXWQ6zehipVLk4GWfH1zCMGgRtLlOIFPuw58ZxVYxVvotMJgJaurKi1i14viB2GIRKXeJTQ==}
     peerDependencies:
       svelte: ^3.0.0 || ^4.0.0 || ^5.0.0-next.1
+
+  svelte-sonner@1.2.1:
+    resolution: {integrity: sha512-N00LOWb60fjKXULbpngku+7E9Krb16KpNq4/Eax5Vu7o1Dpbca55QpaLPsB+yp82JIEdFhfJuv5cVXLoe0ZtVA==}
+    peerDependencies:
+      svelte: ^5.0.0
 
   svelte@5.56.4:
     resolution: {integrity: sha512-/d0QHehmRuJW8gVz395MTkPcPozxzdjBMBE8oEYGz8O3b9KTMzzQ9ZHJQLuFKOHOPQbU6kx/X4iid/EBBzH7iw==}
@@ -6847,6 +6860,11 @@ snapshots:
 
   rou3@0.9.2: {}
 
+  runed@0.28.0(svelte@5.56.4(@typescript-eslint/types@8.63.0)):
+    dependencies:
+      esm-env: 1.2.2
+      svelte: 5.56.4(@typescript-eslint/types@8.63.0)
+
   sade@1.8.1:
     dependencies:
       mri: 1.2.0
@@ -7045,6 +7063,11 @@ snapshots:
 
   svelte-parse-markup@0.1.5(svelte@5.56.4(@typescript-eslint/types@8.63.0)):
     dependencies:
+      svelte: 5.56.4(@typescript-eslint/types@8.63.0)
+
+  svelte-sonner@1.2.1(svelte@5.56.4(@typescript-eslint/types@8.63.0)):
+    dependencies:
+      runed: 0.28.0(svelte@5.56.4(@typescript-eslint/types@8.63.0))
       svelte: 5.56.4(@typescript-eslint/types@8.63.0)
 
   svelte@5.56.4(@typescript-eslint/types@8.63.0):

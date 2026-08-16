@@ -9,8 +9,8 @@ const SignUpSchema = v.object({
   ),
   email: v.pipe(
     v.string(),
-    v.email(),
     v.nonEmpty("email is required"),
+    v.email(),
   ),
   password: v.pipe(
     v.string(),

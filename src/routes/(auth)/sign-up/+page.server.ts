@@ -13,11 +13,12 @@ const SignupSchema = v.object({
   email: v.pipe(
     v.string(),
     v.nonEmpty("email is required"),
-    v.email(),
+    v.email("email should be valid"),
   ),
   password: v.pipe(
     v.string(),
     v.nonEmpty("password is required"),
+    v.minLength(8, "password must be at least 8 characters long."),
   ),
 });
 

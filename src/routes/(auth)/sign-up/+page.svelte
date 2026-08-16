@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { page } from "$app/state";
   import googleSvg from "$lib/assets/icons/google.svg";
   import loaderSVG from "$lib/assets/icons/loader.svg";
   import AuthHelperLink from "$lib/components/ui/auth-helper-link/auth-helper-link.svelte";
@@ -9,9 +10,22 @@
   import Form from "$lib/components/ui/form/form.svelte";
   import Input from "$lib/components/ui/input/input.svelte";
 
+  import { toast } from "svelte-sonner";
+
   const { form } = $props();
 
   let loading = $state(false);
+
+  $effect(() => {
+    // eslint-disable-next-line antfu/if-newline
+    if (!form) return;
+
+    if (page.status === 422 || page.status === 500) {
+      toast.error(
+        "Something went wrong creating your account. Please try again.",
+      );
+    }
+  });
 </script>
 
 <Form

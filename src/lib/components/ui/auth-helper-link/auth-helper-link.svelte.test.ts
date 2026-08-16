@@ -12,7 +12,7 @@ describe("auth-helper-link", () => {
 
   it("should render children correctly", async () => {
     const children = createRawSnippet(() => ({
-      render: () => `Are you sure?`,
+      render: () => `<span>Are you sure?</span>`,
     }));
 
     await render(AuthHelperLink, { children, label: "", href: "/" });
@@ -24,7 +24,7 @@ describe("auth-helper-link", () => {
 
   it("should render anchor when href and anchor are provided", async () => {
     const children = createRawSnippet(() => ({
-      render: () => `Are you sure?`,
+      render: () => `<span>Are you sure?</span>`,
     }));
 
     await render(AuthHelperLink, { children, label: "Go here", href: "/sign-in" });

@@ -20,6 +20,9 @@ importers:
       pg:
         specifier: ^8.23.0
         version: 8.23.0
+      transliteration:
+        specifier: ^2.6.1
+        version: 2.6.1
       valibot:
         specifier: ^1.4.2
         version: 1.4.2(typescript@6.0.3)
@@ -3069,6 +3072,11 @@ packages:
     resolution: {integrity: sha512-sf4i37nQ2LBx4m3wB74y+ubopq6W/dIzXg0FDGjsYnZHVa1Da8FH853wlL2gtUhg+xJXjfk3kUZS3BRoQeoQBQ==}
     engines: {node: '>=6'}
 
+  transliteration@2.6.1:
+    resolution: {integrity: sha512-hJ9BhrQAOnNTbpOr1MxsNjZISkn7ppvF5TKUeFmTE1mG4ZPD/XVxF0L0LUoIUCWmQyxH0gJpVtfYLAWf298U9w==}
+    engines: {node: '>=20.0.0'}
+    hasBin: true
+
   ts-api-utils@2.5.0:
     resolution: {integrity: sha512-OJ/ibxhPlqrMM0UiNHJ/0CKQkoKF243/AEmplt3qpRgkW8VG7IfOS41h7V8TjITqdByHzrjcS/2si+y4lIh8NA==}
     engines: {node: '>=18.12'}
@@ -6092,6 +6100,8 @@ snapshots:
       eslint-visitor-keys: 5.0.1
 
   totalist@3.0.1: {}
+
+  transliteration@2.6.1: {}
 
   ts-api-utils@2.5.0(typescript@6.0.3):
     dependencies:

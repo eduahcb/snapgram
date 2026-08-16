@@ -8,12 +8,27 @@
     id?: string;
     disabled?: boolean;
     autocomplete?: FullAutoFill | null | undefined;
+    ariaInvalid?: boolean;
+    ariaDescribedBy?: string;
   };
 
-  const { type = "text", disabled = false, ...props }: InputProps = $props();
+  const {
+    type = "text",
+    disabled = false,
+    ariaInvalid,
+    ariaDescribedBy,
+    ...props
+  }: InputProps = $props();
 </script>
 
-<input class="input" {type} {disabled} {...props} />
+<input
+  class="input"
+  {type}
+  {disabled}
+  aria-describedby={ariaDescribedBy}
+  aria-invalid={ariaInvalid}
+  {...props}
+/>
 
 <style>
   .input {

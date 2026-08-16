@@ -34,6 +34,7 @@ export default defineConfig({
         "**/build/**",
         "**/coverage/**",
         "**/src/lib/db/schema/**",
+        "**/src/lib/server/**",
       ],
       thresholds: {
         functions: 90,

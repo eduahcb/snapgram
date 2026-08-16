@@ -1,9 +1,9 @@
 {
   "version": "8",
   "dialect": "postgres",
-  "id": "1db0939f-381d-4693-b518-ce3e28253492",
+  "id": "f6135a98-340b-401e-be9e-35772ff76739",
   "prevIds": [
-    "e04db275-21df-493e-afe1-35aee7951de5"
+    "00000000-0000-0000-0000-000000000000"
   ],
   "ddl": [
     {
@@ -79,7 +79,7 @@
       "schema": "public"
     },
     {
-      "type": "text",
+      "type": "serial",
       "typeSchema": null,
       "notNull": true,
       "dimensions": 0,
@@ -248,7 +248,7 @@
       "table": "account"
     },
     {
-      "type": "text",
+      "type": "serial",
       "typeSchema": null,
       "notNull": true,
       "dimensions": 0,
@@ -393,6 +393,19 @@
     {
       "type": "text",
       "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "display_username",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "user"
+    },
+    {
+      "type": "text",
+      "typeSchema": null,
       "notNull": true,
       "dimensions": 0,
       "default": null,
@@ -469,7 +482,7 @@
       "table": "user"
     },
     {
-      "type": "text",
+      "type": "serial",
       "typeSchema": null,
       "notNull": true,
       "dimensions": 0,

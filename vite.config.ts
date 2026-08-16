@@ -35,6 +35,7 @@ export default defineConfig({
         "**/coverage/**",
         "**/src/lib/db/schema/**",
         "**/src/lib/server/**",
+        "**/src/hooks.server.ts",
       ],
       thresholds: {
         functions: 90,

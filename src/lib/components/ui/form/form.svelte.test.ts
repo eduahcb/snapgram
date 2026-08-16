@@ -1,5 +1,5 @@
 import { createRawSnippet } from "svelte";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { render } from "vitest-browser-svelte";
 import { page } from "vitest/browser";
 
@@ -52,5 +52,46 @@ describe("form", () => {
     const title = page.getByRole("link", { name: "test" });
 
     expect(title).toBeInTheDocument();
+  });
+
+  it("should trigger on submit", async () => {
+    const actions = createRawSnippet(() => ({
+      render: () => `<button type="submit">confirm</button>`,
+    }));
+
+    const submitMock = vi.fn();
+
+    await render(Form, {
+      props: {
+        actions,
+        method: "POST",
+        submit: submitMock,
+      },
+    });
+
+    await page.getByRole("button", { name: "confirm" }).click();
+
+    expect(submitMock).toHaveBeenCalled();
+  });
+
+  it("should call the result handler returned by submit", async () => {
+    const actions = createRawSnippet(() => ({
+      render: () => `<button type="submit">confirm</button>`,
+    }));
+
+    const resultHandler = vi.fn();
+    const submitMock = vi.fn().mockResolvedValue(resultHandler);
+
+    await render(Form, {
+      props: {
+        actions,
+        method: "POST",
+        submit: submitMock,
+      },
+    });
+
+    await page.getByRole("button", { name: "confirm" }).click();
+
+    await expect.poll(() => resultHandler).toHaveBeenCalled();
   });
 });

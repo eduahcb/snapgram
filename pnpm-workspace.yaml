@@ -1,9 +1,10 @@
-shellEmulator: true
+minimumReleaseAgeExcludePrune: true
 
 trustPolicy: no-downgrade
-
 trustPolicyExclude:
   - chokidar@4.0.3
+
+shellEmulator: true
 
 allowBuilds:
   cpu-features: true

@@ -81,6 +81,11 @@ jobs:
         env:
           DB_URL: ${{ secrets.DB_URL }}
           BETTER_AUTH_URL: ${{ secrets.BETTER_AUTH_URL }}
+          SMTP_HOST: localhost
+          SMTP_PORT: "1025"
+          SMTP_USER: ""
+          SMTP_PASSWORD: ""
+          EMAIL_FROM: noreply@localhost
 
   coverage:
     runs-on: ubuntu-latest

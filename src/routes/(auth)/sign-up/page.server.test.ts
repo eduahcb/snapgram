@@ -7,8 +7,12 @@ import { createDatabase } from "$lib/server/db/client";
 import { createTestDb } from "$lib/utils/create-test-db";
 import { truncateAll } from "$lib/utils/truncate-test-db";
 import { usernameNormalized } from "$lib/utils/username-normalized";
-import { afterAll, afterEach, beforeAll, describe, expect, it } from "vitest";
+import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import { actions } from "./+page.server";
+
+vi.mock("$lib/server/email/send-email", () => ({
+  sendEmail: vi.fn().mockResolvedValue(undefined),
+}));
 
 type ActionEvent = Parameters<typeof actions.default>[0];
 
@@ -61,7 +65,7 @@ describe("sign up - Form Actions", () => {
       },
     } as ActionEvent)).rejects.toMatchObject({
       status: 303,
-      location: "/auth/verification",
+      location: "/verify-email",
     });
   });
 
@@ -133,7 +137,7 @@ describe("sign up - Form Actions", () => {
         },
       } as ActionEvent)).rejects.toMatchObject({
         status: 303,
-        location: "/auth/verification",
+        location: "/verify-email",
       });
     });
   });

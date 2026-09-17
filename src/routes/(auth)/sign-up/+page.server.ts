@@ -92,6 +92,6 @@ export const actions = {
       return fail(error.statusCode, { errors });
     }
 
-    redirect(303, "/auth/verification");
+    redirect(303, "/verify-email");
   },
 } satisfies Actions;

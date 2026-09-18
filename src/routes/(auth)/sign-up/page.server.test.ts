@@ -1,6 +1,7 @@
 import type { Auth } from "$lib/server/auth/client";
 
 import type { DB } from "$lib/server/db/client";
+import type { EmailService } from "$lib/server/email/email-service";
 import type { StartedPostgreSqlContainer } from "@testcontainers/postgresql";
 import { createAuth } from "$lib/server/auth/client";
 import { createDatabase } from "$lib/server/db/client";
@@ -10,9 +11,9 @@ import { usernameNormalized } from "$lib/utils/username-normalized";
 import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import { actions } from "./+page.server";
 
-vi.mock("$lib/server/email/send-email", () => ({
-  sendEmail: vi.fn().mockResolvedValue(undefined),
-}));
+const emailService: EmailService = {
+  sendVerification: vi.fn().mockResolvedValue(undefined),
+};
 
 type ActionEvent = Parameters<typeof actions.default>[0];
 
@@ -33,7 +34,7 @@ describe("sign up - Form Actions", () => {
   beforeAll(async () => {
     container = await createTestDb();
     database = createDatabase(container.getConnectionUri());
-    auth = createAuth(database, "http://localhost:5173");
+    auth = createAuth(database, "http://localhost:5173", emailService);
   }, 30000);
 
   afterEach(async () => {

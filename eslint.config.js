@@ -17,5 +17,6 @@ export default antfu({
     "unicorn/filename-case": ["error", { case: "kebabCase" }],
     "style/brace-style": "off",
     "style/arrow-parens": "off",
+    "ts/consistent-type-definitions": "off",
   },
 });
